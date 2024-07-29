@@ -1,3 +1,5 @@
+UC1: Create database
+
 mysql> create database payroll_service;
 Query OK, 1 row affected (0.02 sec)
 
@@ -15,6 +17,9 @@ mysql> show databases;
 | sys                |
 +--------------------+
 5 rows in set (0.03 sec)
+
+------------------------------------------------------------------------------------
+UC2: Create table and add columns
 
 mysql> use payroll_service;
 Database changed
@@ -37,3 +42,26 @@ mysql> describe employee_payroll;
 | start_date | date        | NO   |     | NULL    |                |
 +------------+-------------+------+-----+---------+----------------+
 4 rows in set (0.01 sec)
+
+---------------------------------------------------------------------------------------
+UC3: Insert data
+
+mysql> INSERT INTO employee_payroll (name, salary, start_date)
+    -> VALUES
+    -> ('Harshal Gotarne', 50000, '2023-01-15'),
+    -> ('Nitish Prajapati', 60000, '2023-02-20'),
+    -> ('Amruta Shinde', 55000, '2023-03-25');
+Query OK, 3 rows affected (0.02 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+---------------------------------------------------------------------------------------
+UC4: Retrive Data
+
+mysql> select * from employee_payroll;
++----+------------------+--------+------------+
+| id | name             | salary | start_date |
++----+------------------+--------+------------+
+|  1 | Harshal Gotarne  | 50000  | 2023-01-15 |
+|  2 | Nitish Prajapati | 60000  | 2023-02-20 |
+|  3 | Amruta Shinde    | 55000  | 2023-03-25 |
++----+------------------+--------+------------+
+3 rows in set (0.00 sec)
