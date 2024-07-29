@@ -65,3 +65,26 @@ mysql> select * from employee_payroll;
 |  3 | Amruta Shinde    | 55000  | 2023-03-25 |
 +----+------------------+--------+------------+
 3 rows in set (0.00 sec)
+---------------------------------------------------------------------------------------
+UC5: Search data
+
+
+mysql> SELECT salary FROM employee_payroll
+    -> WHERE name = 'Harshal Gotarne';
++--------+
+| salary |
++--------+
+| 50000  |
++--------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM employee_payroll
+    -> WHERE start_date BETWEEN CAST('2018-01-01' AS DATE) AND DATE(NOW());
++----+------------------+--------+------------+
+| id | name             | salary | start_date |
++----+------------------+--------+------------+
+|  1 | Harshal Gotarne  | 50000  | 2023-01-15 |
+|  2 | Nitish Prajapati | 60000  | 2023-02-20 |
+|  3 | Amruta Shinde    | 55000  | 2023-03-25 |
++----+------------------+--------+------------+
+3 rows in set (0.00 sec)
