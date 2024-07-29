@@ -1,4 +1,4 @@
-UC1
+UC1: Create database
 
 mysql> create database payroll_service;
 Query OK, 1 row affected (0.02 sec)
@@ -19,7 +19,7 @@ mysql> show databases;
 5 rows in set (0.03 sec)
 
 ------------------------------------------------------------------------------------
-UC2
+UC2: Create table and add columns
 
 mysql> use payroll_service;
 Database changed
@@ -44,7 +44,7 @@ mysql> describe employee_payroll;
 4 rows in set (0.01 sec)
 
 ---------------------------------------------------------------------------------------
-UC3
+UC3: Insert data
 
 mysql> INSERT INTO employee_payroll (name, salary, start_date)
     -> VALUES
@@ -54,7 +54,7 @@ mysql> INSERT INTO employee_payroll (name, salary, start_date)
 Query OK, 3 rows affected (0.02 sec)
 Records: 3  Duplicates: 0  Warnings: 0
 ---------------------------------------------------------------------------------------
-UC4
+UC4: Retrive Data
 
 mysql> select * from employee_payroll;
 +----+------------------+--------+------------+
