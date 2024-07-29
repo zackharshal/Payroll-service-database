@@ -88,3 +88,33 @@ mysql> SELECT * FROM employee_payroll
 |  3 | Amruta Shinde    | 55000  | 2023-03-25 |
 +----+------------------+--------+------------+
 3 rows in set (0.00 sec)
+
+---------------------------------------------------------------------------------------
+UC6: Add gender column to the table
+
+mysql> ALTER TABLE employee_payroll
+    -> ADD gender CHAR(1) AFTER name;
+Query OK, 0 rows affected (0.07 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE employee_payroll
+    -> SET gender = 'M'
+    -> WHERE name = 'Harshal Gotarne' OR name = 'Nitish Prajapati';
+Query OK, 2 rows affected (0.01 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> UPDATE employee_payroll
+    -> SET gender = 'F'
+    -> WHERE name = 'Amruta Shinde';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+------------------+--------+--------+------------+
+| id | name             | gender | salary | start_date |
++----+------------------+--------+--------+------------+
+|  1 | Harshal Gotarne  | M      | 50000  | 2023-01-15 |
+|  2 | Nitish Prajapati | M      | 60000  | 2023-02-20 |
+|  3 | Amruta Shinde    | F      | 55000  | 2023-03-25 |
++----+------------------+--------+--------+------------+
+3 rows in set (0.00 sec)
